@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+
+<title>Login</title>
+
+</head>
+
+
+
+<body>
+
+	<h:form>
+		
+		
+		
+		<div id="content">
+		<center>
+		<h1>Register to see the weather.</h1>
+		<p>
+		Email: <h:inputText value="#{user.email}"  minlength="5" maxlength="25" />
+		</p>
+		<p>
+		Username: <h:inputText value="#{user.username}" minlength="5" maxlength="10" />
+		</p><p>
+		Password: <h:inputSecret value="#{user.password}"  minlength="5" maxlength="10" />
+		</p>
+		<h:commandButton action = "#{registerPageController.createAccount()}" value = "Create Account"></h:commandButton>
+		<h:commandButton action = "#{registerPageController.back()}" value = "Back"></h:commandButton>
+		</center>
+           
+        </div>
+		
+	</h:form>
+
+
+</body>
+
+
+</html>
