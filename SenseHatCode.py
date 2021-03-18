@@ -53,10 +53,24 @@ def insert_weather():
     conn.close()
 
 
+sense.set_rotation(180)
 while True:
+    sense.clear(0,0,0)
+    for y in range(8):
+        color = (128, 128, 0)
+        for x in range(8):
+            sense.set_pixel(x,y, color)
+            time.sleep(0.25)
+
+    sense.clear(0,0,0)
+    temp = str(int((sense.get_temperature() * 1.8) +32))
+    sense.show_message(temp + "F", text_colour=(128,128,128), back_colour=(0,0,0))
     insert_weather()
-    print("Wait 15 Minutes.")
-    time.sleep(900)
+    
+#while True:
+#    insert_weather()
+#    print("Wait 15 Minutes.")
+#    time.sleep(900)
     
 
 
