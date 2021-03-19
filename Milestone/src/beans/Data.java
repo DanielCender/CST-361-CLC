@@ -1,5 +1,7 @@
 package beans;
 
+import java.text.DecimalFormat;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -11,6 +13,7 @@ public class Data {
 	private String TimeStamp;
 	private double Tempature;
 	private double Pressure;
+	private double Humidity;
 	private String Location;
 	
 	
@@ -18,17 +21,19 @@ public class Data {
 	
 	
 	//Epoch Data
-	public Data(int time, double tempature, double pressure, String location) {
+	public Data(int time, double tempature, double pressure, double humidity, String location) {
 		this.Time = time;
 		this.Tempature = tempature;
 		this.Pressure = pressure;
+		this.Humidity = humidity;
 		this.Location = location;
 	}
 	//TimeStamp Data
-	public Data(String timeStamp, double tempature, double pressure, String location) {
+	public Data(String timeStamp, double tempature, double pressure, double humidity, String location) {
 		this.TimeStamp = timeStamp;
 		this.Tempature = tempature;
 		this.Pressure = pressure;
+		this.Humidity = humidity;
 		this.Location = location;
 	}
 	
@@ -37,19 +42,39 @@ public class Data {
 	public String toString() {
 		String r = "";
 		if (TimeStamp != null) {
-			r = "Data [Time=" + TimeStamp + ", Tempature=" + Tempature + ", Pressure=" + Pressure + ", Location=" + Location
-					+ "]";
+			r = "Data [Time=" + TimeStamp + ", Tempature=" + Tempature + ", Pressure=" + Pressure
+				+ ", Humidity=" + Humidity + ", Location=" + Location + "]";
 		} else {
-			r = "Data [Time=" + Time + ", Tempature=" + Tempature + ", Pressure=" + Pressure + ", Location=" + Location
-			+ "]";
+			r = "Data [Time=" + Time + ", Tempature=" + Tempature + ", Pressure=" + Pressure
+					+ ", Humidity=" + Humidity + ", Location=" + Location + "]";
 		}
 		
 		
 		return r;
 	}
 	
+	public void makeDataSimple() {
+		DecimalFormat format = new DecimalFormat("#.##");
+		setTempature(Double.parseDouble(format.format(getTempature())));
+		setPressure(Double.parseDouble(format.format(getPressure())));
+		setHumidity(Double.parseDouble(format.format(getHumidity())));
+	}
 	
 	
+	
+	public double getHumidity() {
+		return Humidity;
+	}
+
+
+	
+
+
+	public void setHumidity(double humidity) {
+		Humidity = humidity;
+	}
+
+
 	public String getTimeStamp() {
 		return TimeStamp;
 	}

@@ -33,7 +33,10 @@ public class ConnectToWeatherDB {
 				fd.setTimeStamp(tc.convertTimeStamp(rs.getInt("Time")));
 				fd.setTempature(rs.getDouble("Tempature"));
 				fd.setPressure(rs.getDouble("Pressure"));
+				fd.setHumidity(rs.getDouble("Humidity"));
 				fd.setLocation(rs.getString("Location"));
+				//optional to make the data simple 
+				fd.makeDataSimple();
 				allData.add(fd);
 				//System.out.println(fd.toString());
 				
