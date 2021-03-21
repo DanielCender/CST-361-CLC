@@ -1,110 +1,93 @@
--- MySQL dump 10.13  Distrib 8.0.22, for macos10.15 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: cst-361-clc
--- ------------------------------------------------------
--- Server version	8.0.22
+-- Host: localhost
+-- Generation Time: Mar 21, 2021 at 11:03 PM
+-- Server version: 8.0.13-4
+-- PHP Version: 7.2.24-0ubuntu0.18.04.7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `device_data`
+-- Database: `hHOQMOQDTD`
 --
+CREATE DATABASE IF NOT EXISTS `hHOQMOQDTD` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `hHOQMOQDTD`;
 
-DROP TABLE IF EXISTS `device_data`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `device_data`
-(
-  `
-insert`
-datetime
-NOT
-NULL,
-`device_id
-` int NOT NULL,
-  `id` int NOT NULL AUTO_INCREMENT,
-  `temperature` decimal
-(5,2) NOT NULL,
-  `humidity` decimal
-(4,2) NOT NULL,
-  PRIMARY KEY
-(`id`),
-  UNIQUE KEY `id_UNIQUE`
-(`id`),
-  KEY `device_id_idx`
-(`device_id`),
-  CONSTRAINT `device_id` FOREIGN KEY
-(`device_id`) REFERENCES `devices`
-(`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- --------------------------------------------------------
 
 --
--- Table structure for table `devices`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `devices`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `devices`
-(
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar
-(45) NOT NULL,
-  `latitude` varchar
-(45) NOT NULL,
-  `longitude` varchar
-(45) NOT NULL,
-  PRIMARY KEY
-(`id`),
-  UNIQUE KEY `id_UNIQUE`
-(`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `user` (
+  `Id` int(11) NOT NULL,
+  `Username` text COLLATE utf8_unicode_ci NOT NULL,
+  `Email` text COLLATE utf8_unicode_ci NOT NULL,
+  `Password` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Table structure for table `users`
+-- Dumping data for table `user`
 --
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users`
-(
-  `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar
-(50) NOT NULL,
-  `email` varchar
-(45) NOT NULL,
-  `password` varchar
-(200) NOT NULL,
-  PRIMARY KEY
-(`id`),
-  UNIQUE KEY `username_UNIQUE`
-(`username`),
-  UNIQUE KEY `email_UNIQUE`
-(`email`),
-  UNIQUE KEY `id_UNIQUE`
-(`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `user` (`Id`, `Username`, `Email`, `Password`) VALUES
+(0, 'Azoller', 'azoller11@gmail.com', 'PAssword'),
+(0, 'Azoller', 'azoller11@gmail.com', 'Password');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `weatherInformation`
+--
+
+CREATE TABLE `weatherInformation` (
+  `Location` text COLLATE utf8_unicode_ci NOT NULL,
+  `Pressure` float NOT NULL,
+  `Tempature` double NOT NULL,
+  `Humidity` double NOT NULL,
+  `Time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `weatherInformation`
+--
+
+INSERT INTO `weatherInformation` (`Location`, `Pressure`, `Tempature`, `Humidity`, `Time`) VALUES
+('Gilbert', 977.507, 78.256173324585, 31.284351348877, 1616024164),
+('Gilbert', 977.714, 93.6425910949707, 22.3672828674316, 1616025221),
+('Gilbert', 977.743, 95.5182113647461, 21.5385704040527, 1616025660),
+('Gilbert', 977.747, 95.5182113647461, 21.5538597106934, 1616025662),
+('Gilbert', 977.775, 96.2811706542969, 21.5049324035645, 1616025748),
+('Gilbert', 977.732, 95.9314826965332, 21.3245124816895, 1616025813),
+('Gilbert', 977.758, 95.8678993225098, 21.4896430969238, 1616025896),
+('Gilbert', 977.749, 96.4719139099121, 21.2755851745605, 1616025962),
+('Gilbert', 977.723, 95.6771629333496, 21.5232810974121, 1616026027),
+('Gilbert', 977.567, 90.1138854980469, 23.9054470062256, 1616026602),
+('Gilbert', 977.549, 90.0503089904785, 23.7311420440674, 1616026622),
+('Gilbert', 977.524, 89.7641975402832, 23.8473453521729, 1616026641),
+('Gilbert', 977.518, 89.7641975402832, 24.3488540649414, 1616026661),
+('Gilbert', 977.516, 89.7641975402832, 24.1133880615234, 1616026680),
+('Gilbert', 977.522, 89.7006210327148, 23.9941291809082, 1616026718),
+('Gilbert', 977.501, 89.255558013916, 24.162317276001, 1616026738),
+('Gilbert', 977.505, 89.6370376586914, 24.1409111022949, 1616026766),
+('Gilbert', 977.51, 89.5098777770996, 24.2234764099121, 1616026807),
+('Gilbert', 977.495, 89.6370376586914, 24.1409111022949, 1616026827),
+('Gilbert', 977.497, 89.5416694641113, 23.9237937927246, 1616026847),
+('Gilbert', 977.486, 89.6052459716797, 24.1500854492188, 1616026867),
+('Gilbert', 977.485, 89.7324058532715, 24.1042156219482, 1616026887);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2021-03-07 10:46:31
