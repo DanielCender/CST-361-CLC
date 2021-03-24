@@ -18,12 +18,16 @@ public class RegisterPageController {
 		User user = context.getApplication().evaluateExpressionGet(context, "#{user}", User.class);
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("user", user);
 		String nav = "Login.xhtml?faces-redirect=true";
-		if (user != null) {
+		if (user != null && user.getEmail() != null) {
 			if (!user.getEmail().contains("@") || !user.getEmail().contains(".")) {
 				nav = "Register.xhtml?faces-redirect=true";
+				System.out.println("Login Fail");
 			} else {
 				udb.insertOne(user);
 			}
+		} else {
+			System.out.println("Login Fail");
+			nav = "Register.xhtml?faces-redirect=true";
 		}
 		
 		

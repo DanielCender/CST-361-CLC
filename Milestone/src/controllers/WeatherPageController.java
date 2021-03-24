@@ -17,11 +17,23 @@ public class WeatherPageController {
 	ConnectToWeatherDB wdb = new ConnectToWeatherDB();
 	
 	public List<Data> dataList = new ArrayList<Data>();
+	public Data currentData = new Data();
 	
 	public WeatherPageController() {
 		dataList =  wdb.getAllWeatherData();
+		currentData = wdb.getCurrentData();
 	}
 	
+	
+	
+	public Data getCurrentData() {
+		return currentData;
+	}
+
+	public void setCurrentData(Data currentData) {
+		this.currentData = currentData;
+	}
+
 	public void getData() {
 		setDataList(wdb.getAllWeatherData());
 	}

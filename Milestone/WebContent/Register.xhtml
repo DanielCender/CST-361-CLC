@@ -3,42 +3,39 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
-
-<head>
-
-<title>Login</title>
-
-</head>
+<ui:composition template="/layouts/commonLayouts.xhtml">
+	<ui:define name="content">
 
 
 
-<body>
 
-	<h:form>
-		
-		
-		
-		<div id="content">
-		<center>
-		<h1>Register to see the weather.</h1>
-		<p>
-		Email: <h:inputText value="#{user.email}"  minlength="5" maxlength="25" />
-		</p>
-		<p>
-		Username: <h:inputText value="#{user.username}" minlength="5" maxlength="10" />
-		</p><p>
-		Password: <h:inputSecret value="#{user.password}"  minlength="5" maxlength="10" />
-		</p>
-		<h:commandButton action = "#{registerPageController.createAccount()}" value = "Create Account"></h:commandButton>
-		<h:commandButton action = "#{registerPageController.back()}" value = "Back"></h:commandButton>
-		</center>
-           
-        </div>
-		
-	</h:form>
+		<body>
+
+			<h:form>
+				<div class="login-block">
+					<h1>Register</h1>
+					Email:
+					<h:inputText type="text" value="#{user.email}" placeholder="Email" />
+					Username:
+					<h:inputText type="text" value="#{user.username}"
+						placeholder="Username" id="username" />
+					Password:
+					<h:inputSecret type="password" value="#{user.password}"
+						placeholder="Password" id="password" />
+					<h:commandButton action="#{registerPageController.createAccount()}"
+						value="Create Account"></h:commandButton>
+					<h:commandButton action="#{registerPageController.back()}"
+						value="Back"></h:commandButton>
 
 
-</body>
 
+				</div>
+
+			</h:form>
+
+
+		</body>
+	</ui:define>
+</ui:composition>
 
 </html>

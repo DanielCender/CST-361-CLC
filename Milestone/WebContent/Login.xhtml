@@ -4,38 +4,39 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 
-<head>
-
-<title>Login</title>
-
-</head>
 
 
+<ui:composition template="/layouts/commonLayouts.xhtml">
+	<ui:define name="content">
 
-<body>
+		<body>
 
-	<h:form>
-		
-		
-		
-		<div id="content">
-		<center>
-		<h1>Welcome! To see the weather, you must login.</h1>
-		<p>
-		Username: <h:inputText value="#{user.username}" />
-		</p><p>
-		Password: <h:inputSecret value="#{user.password}" />
-		</p> 
-		<h:commandButton action = "#{loginPageController.onSubmit()}" value = "Login"></h:commandButton>
-		<h:commandButton action = "Register.xhtml" value = "Register"></h:commandButton>
-		</center>
-           
-        </div>
-		
-	</h:form>
+			<h:form>
+				<div class="login-block">
+					<h1>Login</h1>
+					Username:
+					<h:inputText type="text" value="#{user.username}"
+						placeholder="Username" id="username" />
+					Password:
+					<h:inputSecret type="password" value="#{user.password}"
+						placeholder="Password" id="password" />
+					<h:commandButton action="#{loginPageController.onSubmit()}"
+						value="Login"></h:commandButton>
+					<h:commandButton action="Register.xhtml?faces-redirect=true" value="Register"></h:commandButton>
+				</div>
+			</h:form>
 
 
-</body>
 
+
+
+
+
+
+
+
+		</body>
+	</ui:define>
+</ui:composition>
 
 </html>

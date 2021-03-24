@@ -22,7 +22,26 @@ public class ConnectToWeatherDB {
 	private ResultSet rs;
 	private timeConverter tc = new timeConverter();
 	
-	
+	public Data getCurrentData() {
+		connect("select * from hHOQMOQDTD.currentweather");
+		Data fd = new Data();
+		try {
+			while(rs.next()) {
+				fd.setTimeStamp(tc.convertTimeStamp(rs.getInt("Time")));
+				fd.setTempature(rs.getDouble("Tempature"));
+				fd.setPressure(rs.getDouble("Pressure"));
+				fd.setHumidity(rs.getDouble("Humidity"));
+				fd.setLocation(rs.getString("Location"));
+				//optional to make the data simple 
+				fd.makeDataSimple();
+				System.out.println(fd.toString());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		disconnect();
+		return fd;
+	}
 	
 	public List<Data> getAllWeatherData() {
 		connect("select * from hHOQMOQDTD.weatherInformation");

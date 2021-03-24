@@ -10,7 +10,7 @@ public class timeConverter {
 	private static Date today = Calendar.getInstance().getTime();
 	private static Calendar calendar = Calendar.getInstance(); // Returns instance with current date and time set
 	//Formats the time for us :)
-	private static SimpleDateFormat calanderFormatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+	private static SimpleDateFormat calanderFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 	
 	
 	
