@@ -1,4 +1,4 @@
-package business;
+package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,9 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 import beans.User;
 
-public class ConnectToUserDB {
+
+
+public class ConnectToUserDB{
 	
 	
 	//Remote DB

@@ -3,9 +3,10 @@ package controllers;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 import beans.User;
-import business.ConnectToUserDB;
+import database.ConnectToUserDB;
 
 
 @ManagedBean

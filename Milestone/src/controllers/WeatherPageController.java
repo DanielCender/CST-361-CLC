@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import beans.Data;
-import business.ConnectToWeatherDB;
+import database.ConnectToWeatherDB;
 
 @ManagedBean
 @ViewScoped

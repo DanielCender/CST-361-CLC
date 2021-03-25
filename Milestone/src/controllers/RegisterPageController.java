@@ -5,7 +5,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import beans.User;
-import business.ConnectToUserDB;
+import database.ConnectToUserDB;
 
 @ManagedBean
 @ViewScoped

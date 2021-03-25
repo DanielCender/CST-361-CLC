@@ -2,11 +2,16 @@ package beans;
 
 import java.text.DecimalFormat;
 
+import javax.enterprise.inject.Model;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @ManagedBean
-@ViewScoped 
+@ViewScoped
+@Entity
+@XmlRootElement(name = "Data")
 public class Data {
 	
 	private int Time;
