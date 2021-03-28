@@ -3,6 +3,7 @@ package business;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.ApplicationPath;
@@ -14,11 +15,25 @@ import javax.ws.rs.core.MediaType;
 
 import beans.Data;
 import database.ConnectToWeatherDB;
-//@RequestScoped This annotation breaks everything -_-
+
+//@RequestScoped Is not needed, in the textbook examples the annotation is not present; YAY (Shad Sluiter has it in his videos)
 @Path("/weather")
 @Produces({ "application/xml", "application/json" })
 @Consumes({ "application/xml", "application/json" })
 public class WeatherRestService {
+	
+	/*
+	*****Here are the links to show the xml and json outputs.*******
+	
+	
+	xml
+	http://localhost:8080/Milestone/rest/weather/getxml
+	
+	json
+	http://localhost:8080/Milestone/rest/weather/getjson
+	
+	*/
+	
 	
 	
 	ConnectToWeatherDB wdb = new ConnectToWeatherDB();

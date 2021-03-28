@@ -7,12 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.ejb.Local;
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Alternative;
 
 import beans.User;
+import business.DatabaseInterfaceUser;
 
-
-
-public class ConnectToUserDB{
+@Local
+@Alternative
+public class ConnectToUserDB implements DatabaseInterfaceUser{
 	
 	
 	//Remote DB

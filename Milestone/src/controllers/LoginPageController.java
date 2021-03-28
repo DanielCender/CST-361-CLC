@@ -6,6 +6,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import beans.User;
+import business.BusinessServiceInterfaceUser;
 import database.ConnectToUserDB;
 
 
@@ -14,7 +15,9 @@ import database.ConnectToUserDB;
 public class LoginPageController {
 
 	
-	ConnectToUserDB udb = new ConnectToUserDB();
+	//ConnectToUserDB udb = new ConnectToUserDB();
+	@Inject
+	BusinessServiceInterfaceUser udb;
 	
 	public String onSubmit() {
 		FacesContext context = FacesContext.getCurrentInstance();
