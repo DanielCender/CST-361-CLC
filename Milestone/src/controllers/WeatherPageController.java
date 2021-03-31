@@ -10,7 +10,6 @@ import beans.Data;
 import database.ConnectToWeatherDB;
 
 @ManagedBean
-@ViewScoped
 public class WeatherPageController {
 	
 	

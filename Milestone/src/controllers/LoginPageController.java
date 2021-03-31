@@ -15,9 +15,10 @@ import database.ConnectToUserDB;
 public class LoginPageController {
 
 	
-	//ConnectToUserDB udb = new ConnectToUserDB();
+	//
 	@Inject
-	BusinessServiceInterfaceUser udb;
+	ConnectToUserDB udb = new ConnectToUserDB();
+	//BusinessServiceInterfaceUser udb;
 	
 	public String onSubmit() {
 		FacesContext context = FacesContext.getCurrentInstance();

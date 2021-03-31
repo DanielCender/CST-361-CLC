@@ -1,6 +1,8 @@
 package business;
 
 import javax.ejb.Local;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 
 import beans.User;
 

@@ -8,14 +8,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.ejb.Local;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 import beans.User;
 import business.DatabaseInterfaceUser;
 
+
 @Local
-@Alternative
 public class ConnectToUserDB implements DatabaseInterfaceUser{
 	
 	
