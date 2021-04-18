@@ -16,6 +16,7 @@ public class LoginPageController {
 
 	
 	//
+	@Inject
 	ConnectToUserDB udb = new ConnectToUserDB();
 	//BusinessServiceInterfaceUser udb;
 	
