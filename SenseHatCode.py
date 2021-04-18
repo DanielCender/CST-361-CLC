@@ -41,17 +41,26 @@ def insert_weather():
 
     conn = MySQLdb.connect(host="remotemysql.com", user="hHOQMOQDTD", password="f3HJJN4I3c", database="hHOQMOQDTD")
     mycursor = conn.cursor()
-    sql = "INSERT INTO weatherInformation (location, Pressure, Tempature, Time) VALUES (%s, %s, %s, %s)"
+    
+    sql = "UPDATE currentweather SET location=%s, Pressure=%s, Tempature=%s, Humidity=%s, Time=%s WHERE location=%s"
+    #sql = "INSERT INTO weatherInformation (location, Pressure, Tempature, Humidity, Time) VALUES (%s, %s, %s, %s, %s)"
     val = [
-        ('Gilbert', pressure, temp, time.time())
+        ('Gilbert', pressure, temp, humidity, time.time(), 'Gilbert')
         ]
 
 
 
+    sqlLog = "INSERT INTO weatherInformation (location, Pressure, Tempature, Humidity, Time) VALUES (%s, %s, %s, %s, %s)"
+    valLog = [
+        ('Gilbert', pressure, temp, humidity, time.time())
+        ]
+    mycursor.executemany(sqlLog, valLog)
     mycursor.executemany(sql, val)
     conn.commit()
     conn.close()
+    
 
+    
 
 sense.set_rotation(180)
 while True:
@@ -60,7 +69,7 @@ while True:
         color = (128, 128, 0)
         for x in range(8):
             sense.set_pixel(x,y, color)
-            time.sleep(0.25)
+            time.sleep(0.1)
 
     sense.clear(0,0,0)
     temp = str(int((sense.get_temperature() * 1.8) +32))
