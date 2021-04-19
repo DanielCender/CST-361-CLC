@@ -10,9 +10,9 @@
 	<ui:define name="content">
 
 		<body>
-
-			<h:form>
-				<div class="login-block">
+<div class="loginDiv" align="center">
+			<h:form class="form">
+				<div class="login-block" >
 					<h1>Login</h1>
 					Username:
 					<h:inputText type="text" value="#{user.username}"
@@ -25,7 +25,7 @@
 					<h:commandButton action="Register.xhtml?faces-redirect=true" value="Register"></h:commandButton>
 				</div>
 			</h:form>
-
+</div>
 
 		</body>
 	</ui:define>
