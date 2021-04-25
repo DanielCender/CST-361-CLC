@@ -33,6 +33,7 @@ public class ConnectToUserDB implements DatabaseInterfaceUser{
 	 */
 	
 	
+	
 	private String dbURL = "jdbc:mysql://remotemysql.com:3306/hHOQMOQDTD?autoReconnect=true&useSSL=false";
 	private String username = "hHOQMOQDTD";
 	private String password = "f3HJJN4I3c";

@@ -18,7 +18,7 @@ public class RegistrationFactory {
 			} else {
 				udb.insertOne(user);
 			}
-		} else {
+		} else { 
 			System.out.println("Login Fail");
 			nav = "Register.xhtml?faces-redirect=true";
 		}
