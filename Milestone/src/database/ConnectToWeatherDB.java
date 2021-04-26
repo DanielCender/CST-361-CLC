@@ -9,10 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.Data;
-import epochTime.timeConverter;
+import epochTime.TimeConverter;
 
+/**
+* User data service. Connects and interfaces directly with the currentWeather table in the SQL database.
+*
+* @author  Alex Zoller, Crystal Sciarrino, Daniel Cender
+* @version 1.0
+* @since   2021-04-25 
+*/
 public class ConnectToWeatherDB {
-	
 	private String dbURL = "jdbc:mysql://remotemysql.com:3306/hHOQMOQDTD?autoReconnect=true&useSSL=false";
 	private String username = "hHOQMOQDTD";
 	private String password = "f3HJJN4I3c";
@@ -20,7 +26,7 @@ public class ConnectToWeatherDB {
 	private Connection c = null;
 	private Statement stmt = null;
 	private ResultSet rs;
-	private timeConverter tc = new timeConverter();
+	private TimeConverter tc = new TimeConverter();
 	
 	public Data getCurrentData() {
 		connect("select * from hHOQMOQDTD.currentweather");
@@ -70,22 +76,6 @@ public class ConnectToWeatherDB {
 		return allData;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	private void connect(String query) {
 		try {
 			c = DriverManager.getConnection(dbURL, username, password);
@@ -107,5 +97,4 @@ public class ConnectToWeatherDB {
 		}
 		
 	}
-
 }

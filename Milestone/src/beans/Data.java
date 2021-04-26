@@ -8,6 +8,14 @@ import javax.faces.bean.ViewScoped;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+* The Data Bean holds telemetry data from the connected IoT device,
+* retrieved from SQL storage.
+*
+* @author  Alex Zoller, Crystal Sciarrino, Daniel Cender
+* @version 1.0
+* @since   2021-04-25 
+*/
 @ManagedBean
 @ViewScoped
 @Entity

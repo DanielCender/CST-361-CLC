@@ -15,9 +15,14 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
 import beans.User;
-import business.DatabaseInterfaceUser;
 
-
+/**
+* User data service. Connects and interfaces directly with the user table in the SQL database.
+*
+* @author  Alex Zoller, Crystal Sciarrino, Daniel Cender
+* @version 1.0
+* @since   2021-04-25 
+*/
 @Local
 public class ConnectToUserDB implements DatabaseInterfaceUser{
 	

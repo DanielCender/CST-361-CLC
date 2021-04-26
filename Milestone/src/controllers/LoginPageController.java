@@ -10,7 +10,13 @@ import business.BusinessServiceInterfaceUser;
 import business.LoginFactory;
 import database.ConnectToUserDB;
 
-
+/**
+* Controller managing Login Page.
+*
+* @author  Alex Zoller, Crystal Sciarrino, Daniel Cender
+* @version 1.0
+* @since   2021-04-25 
+*/
 @ManagedBean
 @ViewScoped
 public class LoginPageController {

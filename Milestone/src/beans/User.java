@@ -5,6 +5,13 @@ import javax.faces.bean.ViewScoped;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+* The User Bean holds metadata of the authenticated application user.
+*
+* @author  Alex Zoller, Crystal Sciarrino, Daniel Cender
+* @version 1.0
+* @since   2021-04-25 
+*/
 @ManagedBean
 @ViewScoped 
 public class User {

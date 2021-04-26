@@ -16,7 +16,14 @@ import javax.ws.rs.core.MediaType;
 import beans.Data;
 import database.ConnectToWeatherDB;
 
-//@RequestScoped Is not needed, in the textbook examples the annotation is not present; YAY (Shad Sluiter has it in his videos)
+
+/**
+* This business service managing the REST routes for this application.
+*
+* @author  Alex Zoller, Crystal Sciarrino, Daniel Cender
+* @version 1.0
+* @since   2021-04-25 
+*/
 @Path("/weather")
 @Produces({ "application/xml", "application/json" })
 @Consumes({ "application/xml", "application/json" })

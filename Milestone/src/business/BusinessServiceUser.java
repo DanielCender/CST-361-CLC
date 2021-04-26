@@ -10,6 +10,13 @@ import javax.faces.bean.RequestScoped;
 import beans.User;
 import database.ConnectToUserDB;
 
+/**
+* This service Bean uses data services to implement the methods in the User db interface.
+*
+* @author  Alex Zoller, Crystal Sciarrino, Daniel Cender
+* @version 1.0
+* @since   2021-04-25 
+*/
 @Local
 public class BusinessServiceUser implements BusinessServiceInterfaceUser {
 

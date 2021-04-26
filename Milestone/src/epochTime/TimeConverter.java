@@ -4,7 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class timeConverter {
+/**
+* Time Converting helper utility. Converts display-friendly date format to a UNIX timestamp for SQL data insertion.
+*
+* @author  Alex Zoller, Crystal Sciarrino, Daniel Cender
+* @version 1.0
+* @since   2021-04-25 
+*/
+public class TimeConverter {
 	
 	
 	private static Date today = Calendar.getInstance().getTime();
